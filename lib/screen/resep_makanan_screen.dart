@@ -28,7 +28,7 @@ class _ResepMakananScreenState extends State<ResepMakananScreen> {
       appBar: AppBar(
         title: Column(
           children: [
-            Center(child: Text('Mila Amelia - 191011450285')),
+            Center(child: Text('')),
             Text('Resep Makanan'),
           ],
         ),
@@ -49,9 +49,15 @@ class _ResepMakananScreenState extends State<ResepMakananScreen> {
               return Card(
                 child: ListTile(
                   leading: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://www.astronauts.id/blog/wp-content/uploads/2022/08/Makanan-Khas-Daerah-tiap-Provinsi-di-Indonesia-Serta-Daerah-Asalnya-1024x683.jpg"),
-                  ),
+                      backgroundColor: Colors.transparent,
+                      child: SizedBox(
+                          width: 160,
+                          height: 60,
+                          child: ClipRect(
+                            child: Image.asset(
+                              "images/resepmakanan.jpeg",
+                            ),
+                          ))),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -70,7 +76,7 @@ class _ResepMakananScreenState extends State<ResepMakananScreen> {
                     );
                   },
                   contentPadding:
-                      EdgeInsets.symmetric(vertical: 18, horizontal: 18),
+                      EdgeInsets.symmetric(vertical: 5, horizontal: 18),
                   title: Text(
                     resepMakananCubit.resepMakananModel.results![index].title!,
                     style: const TextStyle(
